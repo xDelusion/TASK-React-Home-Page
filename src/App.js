@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import image1 from "./assets/media/bookstore-img.jpg";
+import products from "./product";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="center">
+        <h1>Bell, Book & Candle</h1>
+        <p>Hope you enjoy!</p>
+        <img className="img" src={image1} alt=""></img>
+      </div>
+      <div className="sideBySide">
+        {products.map((prod) => {
+          return (
+            <div className="center1">
+              <img src={prod.image} className="sqr margin" alt="" />
+              <h3>{prod.name}</h3>
+              <h4>{prod.price}</h4>
+            </div>
+          );
+        })}
+      </div>
+    </>
   );
 }
 
